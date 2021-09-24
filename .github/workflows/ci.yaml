@@ -23,11 +23,7 @@ jobs:
 
       - id: set-version
         run: >
-          echo "::set-output
-            name=version::$(
-              cat package.json |
-              sed -En 's/.*"version": "([0-9.]*)".*/\1/p'
-            )"
+          echo "::set-output name=version::$(cat package.json | sed -En 's/.*"version": "([0-9.]*)".*/\1/p')"
 
   test:
     name: Run tests
