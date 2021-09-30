@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v2
       - run: echo ${{ needs.setup.outputs.name }} ${{ needs.setup.outputs.version }}
       - run: npm ci
-      - run: npm test
+      - run: npm run test
   
   push_image:
     name: Push Docker image to Docker Hub
