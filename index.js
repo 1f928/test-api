@@ -7,7 +7,11 @@ require('express-ws')(app);
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send('Woo! You hit the test API.');
+  res.send(`Woo! You hit the test API. Query Params: ${JSON.stringify(req.query)}`);
+});
+
+app.get('/test-route', (req, res) => {
+  res.send(`test-route, success. Query Params: ${JSON.stringify(req.query)}`);
 });
 
 app.ws('/ws', (req, res) => {

@@ -32,7 +32,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-      - run: echo ${{ needs.setup.outputs.name }} ${{ needs.setup.outputs.version }}
       - run: npm ci
       - run: npm test
   
